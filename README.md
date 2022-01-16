@@ -21,7 +21,6 @@ box-shadow: 10px 5px;
 box-shadow: 5px 10px 10px 5px red;
 ```
 
-
 ### border-radius
 ```css
 /* small, fixed */
@@ -51,12 +50,88 @@ object-fit: cover; /* fill (default), contain */
 vw = viewport width
 vh = viewport height
 
-### vertical + horizontal centering
+### Flexbox for vertical + horizontal centering
 ```css
 display: flex;
 align-items: center;
 justify-content: center;
 ```
+
+### transition
+Transition = přechod/animace/prolnutí mezi dvěmi stavy
+
+```css
+.transition {
+    position: absolute;
+    top: 0px;
+    transition: 1s top;
+}
+.transition.done {
+    top: -5px;
+}
+.transition:hover {
+    top: 5px;
+}
+
+#example-element {
+    transition: margin-right 2s;
+    background-color: #e4f0f5;
+    color: #000;
+    margin-right: 0;
+}
+#example-element:hover {
+    background-color: #909;
+    color: #fff;
+    margin-right: 40%;
+}
+```
+
+
+### animation
+Delší sekvence CSS hodnot
+
+```css
+#purple-button {
+  animation: 3s purpleify;
+}
+
+@keyframes purpleify {
+  from {
+    background-color: #e4f0f5;
+    color: #000;
+  }
+  to {
+    background-color: #909;
+    color: #fff;
+  }
+}
+
+.bubble {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    animation: rotate 3s infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+```
+
+
+
+### transform
+
+```css
+transform: rotate(0.5turn);
+```
+
+## JavaScript DOM
 
 ### Arrow function vs Function function
 ```js
@@ -105,45 +180,4 @@ element.className = "class-one class-two";
 element.classList.add("class")
 element.classList.remove("class")
 element.classList.toggle("class")
-```
-
-### transition
-
-```css
-.transition {
-    position: absolute;
-    top: 0px;
-    transition: 1s top;
-}
-.transition.done {
-    top: -5px;
-}
-.transition:hover {
-    top: 5px;
-}
-
-#example-element {
-    transition: margin-right 2s;
-    background-color: #e4f0f5;
-    color: #000;
-    margin-right: 0;
-}
-#example-element:hover {
-    background-color: #909;
-    color: #fff;
-    margin-right: 40%;
-}
-```
-
-
-### animation
-
-
-
-
-
-
-### transform
-```css
-transform: rotate(0.5turn);
 ```
