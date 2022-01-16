@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        #example-element {
+            margin: 2em;
+            padding: 1rem;
+            background-color: #e4f0f5;
+            color: #999;
+            position: absolute;
+            top: 0;
+            transition: .5s color, background-color;
+        }
+
+        #example-element.loading {
+            color: #bbb;
+            background-color: #ddd;
+        }
+
+        #example-element.error {
+            color: #f00;
+            background-color: #faa;
+        }
+
+        #example-element:hover:not(.loading) {
+            color: #000;
+        }
+    </style>
+    <title></title>
+</head>
+
+<body>
+    <div id="example-element">
+        Button
+    </div>
+
+    <script>
+        function timeout(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        const element = document.getElementById("example-element");
+        element.addEventListener("click", async function () {
+            element.classList.add("loading")
+            element.classList.remove("error");
+
+            // const response = await fetch("/login", ...)
+            // const data = await response.json()
+            // const isResponseOk = data.status;
+            await timeout(3000);  // send the form, wait for response
+
+            element.classList.remove("loading");
+            if (true) {
+                element.classList.add("error");
+            } else {
+                // redirect
+            }
+        });
+    </script>
+</body>
+
+</html>
