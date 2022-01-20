@@ -1,0 +1,47 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 300px;
+    height: 60px;
+}
+
+img {
+    position: relative;
+    left: 18%;
+    width: 30px;
+    opacity: 0;
+}
+
+.loading {
+    opacity: 1;
+}
+
+.loadingButton {
+    background-color: cornsilk;
+}
+
+.progress {
+    animation: rotate 2s infinite;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
