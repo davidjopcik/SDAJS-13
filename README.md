@@ -1,5 +1,38 @@
 # Advanced HTML + CSS
 
+## Git
+- Repository
+  - Local repository (files on disk)
+    - contains .git folder
+    - `git clone https://github.com/zarybnicky/SDAPython-7.git` => local clone of the repo
+  - Remote repository (GitHub, GitLab)
+    - Main Repo:
+      - zarybnicky/SDAPython-7 = writable only by owner (zarybnicky)
+    - Fork = copy of the main repo:
+      - davidjopcik/SDAPython-7 = writable only by owner (davidjopcik)
+
+- "Remote" (`git remote -v`) = reference to a remote repository by URL
+  - "origin" - where was this repo cloned from
+  - "upstream" - where was "origin" forked from
+
+- `git commit` = creates a commit
+- `git status` = prints out the state of the local repositorz
+- `git log --oneline --graph --all` = prints out the commit graph
+
+- `git push upstream` = upload local commits to a remote repo
+- `git fetch --all` = download commits from a remote repo
+- `git pull --rebase [origin]` = fetch + rebase
+- `git pull --rebase upstream` = fetch + rebase
+
+- "Pull Request" (PR)
+    - = "git push" between remote repos
+    - needs confirmation by owner or remote repo
+
+- stash = temporary storage of uncommitted changes
+    - `git stash` = save changes and hide them
+    - `git stash pop` = apply saved changes
+    - `git stash && git pull --rebase upstream && git stash pop`
+
 ## CSS selectors
 
 ### Search by attributes
@@ -33,6 +66,10 @@ Block, Element, Modifier = CSS naming convention
 - Possible to use for layout, but NOT recommended
 
 - requires the use of a "clearfix"
+
+### Sizing: vw, vh
+vw = viewport width
+vh = viewport height
 
 ### Media queries
 ```css
@@ -79,9 +116,6 @@ background: radial-gradient(red 0, blue, green 100%)
 object-fit: cover; /* fill (default), contain */
 ```
 
-### vw, vh
-vw = viewport width
-vh = viewport height
 
 ### Flexbox for vertical + horizontal centering
 ```css
@@ -118,7 +152,6 @@ Transition = přechod/animace/prolnutí mezi dvěmi stavy
     margin-right: 40%;
 }
 ```
-
 
 ### animation
 Delší sekvence CSS hodnot
