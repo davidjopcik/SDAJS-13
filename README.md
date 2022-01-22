@@ -11,7 +11,16 @@
 button[type="submit"] { }
 ```
 
-## CSS properties
+## CSS
+
+### BEM
+Block, Element, Modifier = CSS naming convention
+
+- .loading-button = Block
+- .loading-button__text = Block + Element
+- .loading-button--loading = Block + Modifier
+- .loading-button__text--hidden = Block + Element + Modifier
+- .loading-button__left__text--hidden = Block + Element + Modifier
 
 ### Position
 - static = default value, "natural placement"
