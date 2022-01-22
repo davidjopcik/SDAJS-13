@@ -1,0 +1,192 @@
+html{
+    margin: 0;
+    padding: 0;
+    width: 1020px;
+    height: auto;
+}
+
+*, *::before,*::after{
+    box-sizing: inherit;
+}
+body{
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    padding: 2em;
+    background: linear-gradient(#c713cc, #00f5ff);
+}
+
+header,article,aside,footer{
+    
+    padding: 1.2em;
+    background: #3b9ae1;
+    border-radius: .5em;
+    margin: 0.3125em;
+}
+
+header{
+    text-align: center;
+}
+
+main{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+
+article{
+    background: #e64134;
+    flex: 20%;
+    height: 220px;
+}
+
+aside{
+    background: #f6be00;
+    flex: 20%;
+    height: 60px;
+}
+footer{
+    margin-top: 20px;
+    background: rgba(0, 255, 21, 0.938);
+}
+
+footer > p{
+    text-align: center;
+    font-weight: bold;
+}
+
+.header-two{
+    margin-top: 6em;
+    text-align: center;
+    background: rgba(192, 147, 22, 0.726);
+}
+
+.main-two{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+
+.article-two{
+    background: #fff;
+    flex: 20%;
+    height: 220px;
+}
+
+.aside-two{
+    background: #c1f600;
+    flex: 20%;
+    height: 600px;
+    
+}
+.footer-two{
+    margin-top: 20px;
+    background: rgba(255, 0, 43, 0.815);
+}
+
+.footer-two > p{
+    text-align: center;
+    font-weight: bold;
+}
+/* Button  */
+form{
+    display: block;
+    width: 100%;
+}
+
+.button{
+    position: relative;
+    padding: 15px 66px;
+    background: #bada55;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    margin: 0 0 20px 50%;
+    cursor:pointer;
+}
+
+.button:active{
+    background: #2a2d1a50;
+}
+
+.btnText{
+    font-weight: 900;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 2s;
+
+}
+
+.buttonLoading .btnText{
+    visibility: hidden;
+    opacity: 0;
+}
+
+.button:hover{
+    background:rgb(18, 194, 68); 
+    color: #fff;
+    box-shadow: rgba(0, 255, 21, 0.281) 8px 9px;
+    text-shadow: saddlebrown 5px 5px;
+    transition: all 1s;
+}
+
+.buttonLoading::after{
+    content: " ";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 5px;
+    left: 75px;
+    bottom: 0;
+    margin: auto;
+    border: 4px solid transparent;
+    border-top-color: red;
+    border-radius: 50%;
+    animation:  button-loading-spiner 1s ease infinite;
+}
+
+@keyframes  button-loading-spiner{
+    from{
+        transform: rotate(0turn);
+    }
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/*  section    */
+section{
+    display: block;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box{
+    max-width:25% ;
+    height: 32%;
+    border: 1px solid black;
+    text-align: center;
+    margin: 50px;
+    border-radius: 10px;
+    background: rgb(225, 0, 255);
+    box-shadow: 10px 10px #ccc;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+svg{
+    padding: 50px;
+}
+
+button{
+    max-width: 100%;
+    margin: 0px 0 60px 0;
+    color: rgb(23, 116, 221);
+    background: rgb(15, 181, 211);
+    border-radius: 10px;
+    padding: 10px 30px;
+    color: aliceblue;
+}
