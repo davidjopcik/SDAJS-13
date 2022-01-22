@@ -13,6 +13,30 @@ button[type="submit"] { }
 
 ## CSS properties
 
+### Position
+- static = default value, "natural placement"
+- relative = "natural placement" + offset/padding
+- absolute = "no natural placement" + top/left/... = coordinates relative to the parent element or to body
+
+### Float
+- "Obtékání textu kolem obrázku"
+- float: none/left/right
+- Possible to use for layout, but NOT recommended
+
+- requires the use of a "clearfix"
+
+### Media queries
+```css
+@media (prefers-color-scheme: dark) {
+    /*dark mode*/
+}
+@media (max-width: 480px) {
+  .left-container, .right-container {
+    width: 100%;
+  }
+}
+```
+
 ### box-shadow
 ```css
 /* box-shadow: blur-radius | spread-radius */
