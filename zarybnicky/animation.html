@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <span id="counter" style="display:block;position:relative;">1</span>
+    <button id="start-stop-timeout">Start/stop Timeout</button>
+    <button id="start-stop-interval">Start/stop Interval</button>
+    <button id="start-stop-raf">Start/stop RAF</button>
+
+    <script>
+        let offsetTop = 0;
+        const counter = document.getElementById("counter");
+        const step = () => {
+            offsetTop = (offsetTop + 1) % 60;
+            counter.innerText = offsetTop;
+            counter.style.transform = `rotate(-${offsetTop / 2}deg)`
+        }
+
+        // setTimeout(callback, 20);
+        let timeoutInProgress = false;
+        let rafInProgress = false;
+        const btnTimeout = document.getElementById("start-stop-timeout");
+        const btnRaf = document.getElementById("start-stop-raf");
+
+        btnTimeout.addEventListener("click", () => {
+            if (timeoutInProgress) {
+                timeoutInProgress = false;
+            } else {
+                function timeoutStep() {
+                    step();
+                    if (timeoutInProgress) {
+                        setTimeout(timeoutStep, 20);
+                    }
+                }
+                timeoutInProgress = true;
+                timeoutStep();
+            }
+        });
+
+        btnRaf.addEventListener("click", () => {
+            if (rafInProgress) {
+                rafInProgress = false;
+            } else {
+                function rafStep() {
+                    step()
+                    if (rafInProgress) {
+                        requestAnimationFrame(rafStep);
+                    }
+                }
+                rafInProgress = true;
+                rafStep()
+            }
+        });
+
+
+        // setInterval(callback, 16.67)
+        let interval = null;
+        const btnInterval = document.getElementById("start-stop-interval");
+        btnInterval.addEventListener("click", () => {
+            if (interval) {
+                clearInterval(interval)
+                interval = null;
+            } else {
+                interval = setInterval(step, 20)
+            }
+        })
+    </script>
+</body>
+
+</html>
