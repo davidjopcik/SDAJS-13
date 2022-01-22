@@ -129,9 +129,14 @@ Delší sekvence CSS hodnot
 
 ```css
 transform: rotate(0.5turn);
+
+transform: scaleX(-1) rotate(0deg);
+
+transform-origin: center;
+transform-origin: top left;
 ```
 
-## JavaScript DOM
+## JavaScript, DOM
 
 ### Arrow function vs Function function
 ```js
@@ -173,6 +178,14 @@ element.addEventListener("event-name", function (event) {
 element.onclick = function () {};
 ```
 
+### Disabling a button, input, ...
+```js
+element.disabled = true;
+element.disabled = false;
+
+//<button disabled> ... </button>
+```
+
 ### Working with CSS classes in JS
 ```js
 element.className = "class-one class-two";
@@ -180,4 +193,12 @@ element.className = "class-one class-two";
 element.classList.add("class")
 element.classList.remove("class")
 element.classList.toggle("class")
+```
+
+### Change the text of a button
+```js
+const originalText = element.innerText;
+element.innerText = "Loading...";
+// ...
+element.innerText = originalText
 ```

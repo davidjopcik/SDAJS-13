@@ -33,15 +33,13 @@ img {
 
 .progress {
     animation: rotate 2s infinite;
+    transform-origin: 16.5px 15px;
 }
 @keyframes rotate {
     from {
-        transform: rotate(0deg);
+        transform: scaleX(-1) rotate(0deg);
     }
     to {
-        transform: rotate(360deg);
+        transform: scaleX(-1) rotate(-360deg);
     }
 }
-
-
-
