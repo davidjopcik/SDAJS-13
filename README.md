@@ -279,3 +279,13 @@ requestAnimationFrame(callback);
 let intervalId = setInterval(callback, 20);
 clearInterval(intervalId)
 ```
+
+- CSS animations (transition, animation):
+  - simple to write/read, simple to debug
+  - use only for simple animations
+  - transition: on hover 
+  - animation: invalid form submission
+- JS animation (requestAnimationFrame):
+  - complex to use
+  - possibly requires a library (https://greensock.com/gsap/)
+  - usable for any animation - CSS, Canvas, WebGL, ...
