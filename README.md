@@ -35,6 +35,79 @@
 
 ## CSS selectors
 
+### CSS combinators
+```css
+/* Selector list, multiple elements
+  <div class="p-1"></div> ...  <div class="p-2"></div>
+*/
+.p-1, .p-2 {}  
+
+/* Descendant combinator, p-2 inside p-1
+  <div class="p-1">
+    <div>
+      <div class="p-2"></div>
+    </div>
+  </div>    
+  */
+.p-1 .p-2 {} 
+
+/* Child combinator, p-2 directly inside p-1
+  <div class="p-1">
+    <div class="p-2"></div>
+  </div>
+*/
+.p-1 > .p-2 {}
+
+/* General sibling combinator, p-2 somewhere after p-1
+  <div>
+    <div class="p-1"></div>
+    <div></div>
+    <div class="p-2"></div>
+  </div>
+*/
+.p-1 ~ .p-2 { /* styling p-2 */ }
+
+/* Adjacent sibling combinator, p-2 after p-1
+  <div>
+    <div class="p-1"></div>
+    <div class="p-2"></div>
+    <div></div>
+  </div>
+*/
+.p-1 + .p-2 { /* styling p-2 */ }
+
+```
+
+### CSS pseudo classes
+- `:hover` - on mouse over
+- `:active` - on mouse click, on TAB select
+- `:focus` - has cursor, active (text) input alement
+- `:visited` - link that has been visited
+- `:disabled` - `<button disabled>...</button>`, input
+- `:invalid`
+  - input element with invalid value
+  - `<input type="number" pattern="\d+" required>`
+- `:nth-of-type(odd)`
+  - Bootstrap `class="table table-striped"`
+  - `table.table-striped tr:nth-of-type(even) { ... }`
+- `:first-child`, `:last-child`
+  - list of items with separators
+  - `ul > li { border-left: 1px solid black; }`
+  - `ul > li:first-child { border-left: none; }`
+
+- `:not( ... )`
+  - negation of the selector inside
+  - `.btn:not(.loading)`
+
+### CSS pseudo elements
+- `::before`, `::after`
+- insert an element as the first/last child of an element
+- content is controlled by CSS property `content: ""`
+- `content: none` = ::after doesn't exist
+- `content: ""` = ::after exists and is empty
+- `content: "..."` = ::after exists and contains "..."
+- also accepts background-image etc. for images
+
 ### Search by attributes
 ```css
 /* <input  name="password"  /> */

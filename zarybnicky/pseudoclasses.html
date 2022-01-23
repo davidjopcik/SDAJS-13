@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table.table-striped td {
+            min-width: 100px;
+        }
+        
+        table.table-striped tr:nth-of-type(even) {
+            background-color: #ddd;
+        }
+        
+        ul {
+            list-style: none;
+            display: flex;
+        }
+        
+        ul>li {
+            display: block;
+            padding: 5px;
+            border-left: 1px solid black;
+        }
+        
+        ul>li:first-child {
+            border-left: none;
+        }
+        
+        .hrefs-with-arrows>a::after {
+            content: none;
+            content: "";
+            content: "ABCDEFGHIK";
+            content: "→";
+        }
+        
+        .btn {
+            /* default state */
+        }
+        
+        .btn.loading {
+            /* loading state */
+        }
+        
+        .btn:not(.loading) {
+            /* default state */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hrefs-with-arrows">
+        <a href="#">
+            Link
+            <!-- <::after> → </::after> -->
+        </a>
+        <a href="#">Link</a>
+        <a href="#">Link</a>
+    </div>
+
+    <ul>
+        <li>Link</li>
+        <li>Link</li>
+        <li>Link</li>
+        <li>Link</li>
+        <li>Link</li>
+    </ul>
+
+    <table class="table-striped">
+        <tr>
+            <td>1</td>
+        </tr>
+        <tr>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+        </tr>
+    </table>
+</body>
+
+</html>
