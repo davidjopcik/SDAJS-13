@@ -20,18 +20,18 @@
     <script>
         let offsetTop = 0;
         const counter = document.getElementById("counter");
+        const btnTimeout = document.getElementById("start-stop-timeout");
+        const btnRaf = document.getElementById("start-stop-raf");
+        const btnInterval = document.querySelector("#start-stop-interval");
+
         const step = () => {
-            offsetTop = (offsetTop + 1) % 60;
+            offsetTop = (offsetTop + 1) % 60; // 0, 1, 2, ..., 58, 59, 0
             counter.innerText = offsetTop;
-            counter.style.transform = `rotate(-${offsetTop / 2}deg)`
-        }
+            counter.style.transform = `rotate(-${offsetTop / 2}deg)`;
+        };
 
         // setTimeout(callback, 20);
         let timeoutInProgress = false;
-        let rafInProgress = false;
-        const btnTimeout = document.getElementById("start-stop-timeout");
-        const btnRaf = document.getElementById("start-stop-raf");
-
         btnTimeout.addEventListener("click", () => {
             if (timeoutInProgress) {
                 timeoutInProgress = false;
@@ -47,6 +47,7 @@
             }
         });
 
+        let rafInProgress = false;
         btnRaf.addEventListener("click", () => {
             if (rafInProgress) {
                 rafInProgress = false;
@@ -65,10 +66,9 @@
 
         // setInterval(callback, 16.67)
         let interval = null;
-        const btnInterval = document.getElementById("start-stop-interval");
         btnInterval.addEventListener("click", () => {
             if (interval) {
-                clearInterval(interval)
+                clearInterval(interval);
                 interval = null;
             } else {
                 interval = setInterval(step, 20)

@@ -268,3 +268,14 @@ element.innerText = "Loading...";
 // ...
 element.innerText = originalText
 ```
+
+### Animation, delayed function call
+```js
+// Single function execution
+setTimeout(callback, 20); 
+requestAnimationFrame(callback);
+
+// Repeated function execution
+let intervalId = setInterval(callback, 20);
+clearInterval(intervalId)
+```
